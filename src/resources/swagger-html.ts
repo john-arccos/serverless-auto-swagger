@@ -54,7 +54,7 @@ const swaggerUI = `<!DOCTYPE html>
                                         ', ',
                                     ])
                                     scopes.pop()
-                                    return h('span', null, [schemeName, '(', ...scopes, ')'])
+                                    return h('span', null, scopes)
                                 }),
                                 h(Original, props),
                             ])
