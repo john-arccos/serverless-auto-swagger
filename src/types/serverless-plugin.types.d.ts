@@ -12,6 +12,7 @@ import type {
   Serverless,
 } from 'serverless/aws';
 import type { HttpMethod } from './common.types';
+import { MethodSecurity } from './swagger.types';
 
 export type CustomServerless = {
   cli?: { log: (text: string) => void }; // deprecated and replaced in v3.0.0
@@ -112,6 +113,7 @@ export interface CustomHttpEvent extends Http {
   headerParameters?: HeaderParameters;
   queryStringParameters?: QueryStringParameters;
   operationId?: string;
+  security?: MethodSecurity[];
 }
 
 export interface CustomHttpApiEvent extends HttpApiEvent {
@@ -128,6 +130,7 @@ export interface CustomHttpApiEvent extends HttpApiEvent {
   headerParameters?: string;
   queryStringParameterType?: string;
   operationId?: string;
+  security?: MethodSecurity[];
 }
 
 export interface HttpResponses {
