@@ -18,11 +18,12 @@ const swaggerUI = `<!DOCTYPE html>
       rel="stylesheet"
       href="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui.css"
     />
-
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
     <script src="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui-bundle.js"></script>
     <script src="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui-standalone-preset.js"></script>
     <script defer>
       window.onload = () => {
+        const h = React.createElement
         const ui = SwaggerUIBundle({
           url: window.location.href + '.json',
           dom_id: '#swagger-ui',
