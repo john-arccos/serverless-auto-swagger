@@ -237,7 +237,7 @@ export default class ServerlessAutoSwagger {
     this.serverless.service.functions = {
       ...this.serverless.service.functions,
       ...Object.entries(swaggerFunctions(this.serverless))
-        .filter(Boolean)
+        .filter(([_key, value]) => value)
         .reduce(
           (acc, [key, value]) => ({
             ...acc,
